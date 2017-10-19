@@ -1,0 +1,11 @@
+1.error:user_name字段无效？
+
+   在IDEA中userName相当于user_name;
+
+2.js字符串转整型?
+   var i = parseInt(str);
+
+3.springboot无法进入Controller?
+
+  springboot 自带了tomcat所有不需要添加tomcat,启动项目直接运行DemoApplication类。
+
