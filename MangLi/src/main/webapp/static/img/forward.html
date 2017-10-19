@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="jquery-1.8.3.min.js" type="text/javascript" ></script>
+<script type="text/javascript">
+		var xmlHttp;
+		   function createXMLHttpRequest(){
+			   if(window.ActiveXobject){
+				   xmlHttp=new ActiveXobject("Microsoft.XMLHTTP");
+			   }
+			   else{
+				   xmlHttp=new XMLHttpRequest();
+			   }
+		   }
+		   function createQueryString(){
+			   var xue=document.getElementById("xue").value;
+			   var jian=document.getElementById("jian").value;
+			   var couid=document.getElementById("couid").value;
+			   var cha=document.getElementById("cha").value;
+			   var queryString="xue="+xue+"&jian="+jian+"&couid="+couid+"&cha="+cha;
+			   return queryString;
+		   }
+		   function handleStateChange(){
+			   if(xmlHttp.readyState==4){
+				   if(xmlHttp.status==200){
+					   var content=xmlHttp.responseText;
+					   document.getElementById("content").innerHTML=content ;
+				   }
+			   }
+		   }
+		   
+		   function startPost(){
+			   createXMLHttpRequest();
+			   var url="s1?timestamp="+new Date().getTime();
+			   xmlHttp.open("post",url);
+			   xmlHttp.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+			   xmlHttp.send(createQueryString());
+			   xmlHttp.onreadystatechange=handleStateChange;
+		   }
+	 $(function(){
+		 $("input").mouseover(function(){
+			 $(this).addClass("darkseagreen");
+		 });
+		 $("input").mouseout(function(){
+			 $(this).removeClass("darkseagreen");
+		 });
+		 $("#btn").click(function(){
+			 $("#content").slideUp(1000,startPost);
+			 $("#content").animate({"font-size":"5px"});
+			 $("#content").slideDown(1000);
+			 $("#content").animate({"font-size":"15px"});
+		 });
+		 $("p").mouseover(function(){
+			 $(this).addClass("darkseagreen");
+		 });
+	 })
+
+	 </script>
+<style>
+   body{
+   /*  background-image: url(photo/16.jpg); */
+   }
+  .darkseagreen{
+  background:darkseagreen;
+  }
+  div{
+  
+   
+  }
+  #head{
+     width:750px;
+     margin-left:70px;
+     padding-top:30px;
+     text-align:center;
+  }
+  #header{
+     width:750px;
+     margin-left:70px;
+     padding-top:20px;
+     text-align:center;
+  }
+  #content{
+     width:650px;
+     height:450px;
+     margin-left:40px;
+     padding-top:20px;
+     padding-left:100px;
+     font-size:5px;
+
+  }
+  td{
+       text-align:center;
+   }
+  #btn{
+      width:50px;
+  }
+  #text{
+     display:none;
+   }
+   #sub{
+      width:50px;
+      background:darkseagreen;
+      cursor: pointer;
+   }
+
+</style>
+</head>
+<body>
+
+<div id="head">
+ 请选择学期:<input type="text" id="xue" name="xue" value="" placeholder=" 请选择学期" list="li">
+ <datalist id="li">
+					<option>第一学期</option>
+					<option>第二学期</option>
+					<option>第三学期</option>
+					<option>第四学期</option>
+					<option>第五学期</option>
+					<option>第六学期</option>
+				</datalist>
+</div>
+   <div id="header">
+       请输入关键字:<input type="text" id="jian" name="jian" value="" placeholder=" 请输入关键字">
+          <input type="text" name="couid" id="couid" value="" list="cou" placeholder="请选择查询条件"/>
+				<datalist id="cou">
+					<option>课程号</option>
+					<option>课程名</option>
+				</datalist>	
+		 <input type="text" name="cha" id="cha" value="" list="ch" placeholder="请选择查询条件"/>
+				<datalist id="ch">
+					<option>精确查询</option>
+					<option>模糊查询</option>
+				</datalist>	
+				<input type="button" id="btn" name="btn" value="查询">
+   </div>
+   <div id="content">
+   </div>
+  
+</body>
+</html>

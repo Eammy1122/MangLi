@@ -1,0 +1,19 @@
+#head_menu{
+    width:70%;
+}
+#head_menu li{
+    margin-left: 5%;
+    cursor: pointer;
+}
+#login #userName,#pwd{
+    height: 40px;
+}
+#regist #r_userName,#r_pwd{
+    height: 40px;
+}
+#regist .r_p{
+    margin-top:5px;
+}
+#login .l_p{
+    margin-top:5px;
+}

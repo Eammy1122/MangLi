@@ -1,0 +1,31 @@
+body{
+    padding: 0;
+    background-image: url(../images/index/background/Slide2.jpg);
+    background-size: cover;
+}
+#head_menu{
+    width:70%;
+}
+#head_menu li{
+    cursor: pointer;
+}
+#homePage #home_head{
+    list-style: none;
+}
+#homePage #home_head li{
+    height: 365px;
+    width: 90%;
+    position: absolute;
+}
+#homePage #home_foot{
+    margin-top: 430px;
+    height: 10px;
+}
+#homePage #home_head h2,h3{
+    margin-left: 33%;
+    margin-top: 85px;
+}
+#homePage #head_two h2,h3{
+    margin-left: 33%;
+    margin-top: 85px;
+}
