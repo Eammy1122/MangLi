@@ -10,10 +10,18 @@ public class ToController {
 
     @RequestMapping("/toLogin")
     public String toLogin(){
-        System.out.println("hello");
         return "login";
     }
 
+    @RequestMapping("/toPersonal")
+    public String toPersonal(){
+        return "personal";
+    }
+
+    @RequestMapping("/toResume")
+    public String toResume(){
+        return "resume";
+    }
 
     @RequestMapping("hello")
     @ResponseBody

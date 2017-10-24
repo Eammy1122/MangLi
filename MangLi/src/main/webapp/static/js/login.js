@@ -21,8 +21,12 @@ function Login(){
         var data = {phone:$("#userName").val(),password:$("#pwd").val()};
         var url = "user/login";
         $.getJSON(url,data,function(result){
-            if(result.data==0){
-                alert("success");
+
+            if(result.state==0){
+                var loginData = result.data;
+                setCookie('userName',loginData.username);
+                setCookie('userId',loginData.user_id);
+                location.href="index.jsp";
             }
             else{
                 if(result.message=="手机号不能为空"||result.message=="手机号输入错误"){

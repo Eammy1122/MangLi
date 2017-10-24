@@ -9,12 +9,13 @@
 <html>
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Title</title>
+        <title>Login</title>
         <script src="static/js/jquery-3.1.1.min.js"></script>
         <script src="static/js/bootstrap.js"></script>
         <link type="text/css" rel="stylesheet" href="static/css/bootstrap.min.css">
         <link type="text/css" rel="stylesheet" href="static/css/login.css">
         <script src="static/js/login.js"></script>
+        <script src="static/js/cookie_util.js"></script>
     </head>
     <body class="container-fluid">
     <header style="margin:0px;padding: 0px">

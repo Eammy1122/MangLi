@@ -1,0 +1,152 @@
+.content{
+    margin-top: 50px;
+    height: 90%;
+    width: 109.5%;
+}
+.content .con-body{
+    height: 100%;
+    padding: 0;
+}
+.content .con-left-head{
+    margin: 0;
+    width:100%;
+    height:30%;
+    /*background-color: #1b6d85;*/
+    padding-top: 15px;
+    border: 1px solid gainsboro;
+}
+.content .con-left-head p{
+    display: block;
+    font-size: 20px;
+    width: 60%;
+    /*border: 1px solid red;*/
+    margin-left: 5%;
+    float: left;
+}
+.content .con-left-head button{
+    display: block;
+    float: left;
+    width: 30%;
+    margin-top: 17px;
+    /*background-color: #ff6000;*/
+    background-color: #fff2e3;
+    border: 1px solid #ff6000;
+    color: gray;
+    margin-left: 5%;
+}
+.content .con-left-foot{
+    height: 70%;
+    width: 100%;
+
+}
+.content .con-left-foot ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.content .con-left-foot li{
+    display: block;
+    height: 14.3%;
+    border: 1px solid gainsboro;
+    cursor: pointer;
+}
+.content .con-left-foot li p{
+    display: block;
+    float: left;
+    /*border: 1px solid red;*/
+    font-size: 25px;
+    margin-top: 6%;
+    margin-left: 10%;
+    color: gray;
+    transition: all 0.5s;
+}
+.content .con-left-foot li span{
+    display: block;
+    float: left;
+    /*border: 1px solid red;*/
+    font-size: 16px;
+    margin-top: 7%;
+    margin-left: 5%;
+    color: black;
+}
+.content .con-right{
+    overflow-y: scroll;
+}
+.content .con-right ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+}
+.content .con-right li{
+    display: block;
+    width: 80%;
+    /*height: 20%;*/
+    border: 1px solid lightgrey;
+}
+.con-right li .name{
+    height: 30px;
+    line-height: 30px;
+    font-size: 24px;
+    margin-bottom: 18px;
+    margin-top: 15px;
+    margin-left: 0;
+    float: left;
+    width: 80%;
+    /*border: 1px solid red;*/
+}
+.con-right li .edit{
+    display: none;
+    float: left;
+    clear: right;
+    margin-left: 15%;
+    margin-top: 20px;
+    font-size:20px;
+    cursor: pointer;
+}
+.con-right li h4{
+    display: block;
+    float: left;
+    height: 30px;
+    width: 80%;
+    margin-left: 4.5%;
+    line-height: 30px;
+    color: red;
+    /*background-color: red;*/
+}
+.con-right li .xinxi-mon{
+    display: block;
+    height: 40px;
+    margin-top: 35px;
+    font-size: 30px;
+    opacity: 0.5;
+    margin-bottom: 35px;
+}
+.con-right li .xinxi-mon span{
+    display: block;
+    float: left;
+    margin-left: 30%;
+}
+.con-right li .xinxi-monChange{
+    display: none;
+    border: 1px solid red;
+    margin-top: 15px;
+}
+.xinxi1{
+    margin-top: 25px;
+    padding-left: 10%;
+}
+.xinxi2{
+    margin-top: 30px;
+    margin-bottom: 25px;
+}
+.xinxi2 button{
+    display: inline-block;
+    width: 80px;
+    height: 28px;
+    margin-left: 30%;
+    color: #999;
+    background-color: #fff;
+    border-color: #bbb;
+
+}
