@@ -82,6 +82,7 @@
     display: block;
     width: 80%;
     /*height: 20%;*/
+    min-height: 60px;
     border: 1px solid lightgrey;
 }
 .con-right li .name{
@@ -100,7 +101,7 @@
     float: left;
     clear: right;
     margin-left: 15%;
-    margin-top: 20px;
+    margin-top: 15px;
     font-size:20px;
     cursor: pointer;
 }
@@ -113,6 +114,10 @@
     line-height: 30px;
     color: red;
     /*background-color: red;*/
+}
+.con-right li h4 span{
+    display: inline-block;
+    /*border: 1px solid red;*/
 }
 .con-right li .xinxi-mon{
     display: block;
@@ -130,7 +135,8 @@
 .con-right li .xinxi-monChange{
     display: none;
     border: 1px solid red;
-    margin-top: 15px;
+    margin-top: 55px;
+
 }
 .xinxi1{
     margin-top: 25px;
@@ -141,12 +147,216 @@
     margin-bottom: 25px;
 }
 .xinxi2 button{
-    display: inline-block;
-    width: 80px;
-    height: 28px;
-    margin-left: 30%;
-    color: #999;
-    background-color: #fff;
-    border-color: #bbb;
+    width: 70px;
+    margin-left: 40%;
+}
 
+.con-right li .qiu-mon{
+    height: 120px;
+    /*background: red;*/
+    margin-top: 45px;
+    font-size: 15px;
+    padding-left: 8%;
+}
+.con-right li .qiu-mon div{
+    width: 40%;
+    float: left;
+    margin-top: 5px;
+    /*background: red;*/
+}
+.con-right li .qiu-monChange{
+    background: whitesmoke;
+    border: 1px solid red;
+    margin-top: 55px;
+    font-size: 15px;
+    padding-left: 8%;
+    padding-top: 15px;
+}
+.con-right li .qiu-monChange li{
+    min-height: 40px;
+    border: none;
+    margin-left: 15%;
+}
+.con-right li .qiu-monChange li span{
+    display: block;
+    float: left;
+    /*background: #000;*/
+    height: 30px;
+    margin-top: 5px;
+}
+.con-right li .qiu-monChange li .input-group{
+    margin-left: 15px;
+    width:60%;
+    float: left;
+}
+.con-right li .work-jy{
+    height: 120px;
+    /*background: red;*/
+    margin-top: 45px;
+    font-size: 15px;
+    padding-left: 8%;
+}
+.con-right li .work-jy div{
+    width: 40%;
+    float: left;
+    margin-top: 5px;
+    /*background: red;*/
+}
+
+.con-right li .work-jiChange{
+    background: whitesmoke;
+    border: 1px solid red;
+    margin-top: 55px;
+    font-size: 15px;
+    padding-left: 8%;
+    padding-top: 15px;
+}
+.con-right li .work-jiChange li{
+    margin-left: 10%;
+    border: none;
+}
+.con-right li .work-jiChange li span{
+    display: block;
+    float: left;
+    /*background: #000;*/
+    height: 30px;
+    margin-top: 5px;
+}
+.con-right li .work-jiChange li .input-group{
+    margin-left: 15px;
+    width:60%;
+    float: left;
+}
+.con-right li .school-mon li{
+    width: 100%;
+    border: 1px solid gainsboro;
+    height: 90px;
+    padding-left: 3%;
+    cursor: pointer;
+    margin-left: 0%;
+    margin-top: 5px;
+}
+.con-right li .school-change{
+    margin-top: 55px;
+    border: 1px solid red;
+}
+.con-right li .school-change li{
+    margin-left: 15%;
+    border: none;
+}
+.con-right li .school-change li span{
+    display: block;
+    float: left;
+    /*background: #000;*/
+    height: 30px;
+    margin-top: 5px;
+}
+.con-right li .school-change li .input-group{
+    margin-left: 15px;
+    width:60%;
+    float: left;
+}
+.con-right li .school-mon li div{
+    /*background: red;*/
+    margin-top: 15px;
+    width: 37%;
+    float: left;
+    margin-left: 4%;
+}
+.con-right li .school-mon li .school-delete{
+    /*background: #000;*/
+    display: none;
+    width: 10%;
+}
+.con-right li .school-mon li .school-delete span{
+    cursor: pointer;
+    margin-left: 20%;
+}
+.con-right li .school-mon li .school-delete span:first-child{
+    margin-left: 0%;
+}
+.con-right li .schome-mon li{
+    width: 100%;
+    border: 1px solid gainsboro;
+    height: 10px;
+    padding-left: 3%;
+    cursor: pointer;
+    margin-left: 0%;
+    margin-top: 5px;
+
+}
+.con-right li .schome-mon li div{
+    /*background: red;*/
+    margin-top: 15px;
+    width: 37%;
+    float: left;
+    margin-left: 4%;
+}
+
+.con-right li .schome-mon li .schoolhome-delete{
+    /*background: #000;*/
+    display: none;
+    width: 10%;
+}
+.con-right li .schome-mon li .schoolhome-delete span{
+    cursor: pointer;
+    margin-left: 20%;
+}
+/*技能特长*/
+
+.con-right li .jineng-mon li{
+    width: 100%;
+    border: 1px solid gainsboro;
+    height: 10px;
+    padding-left: 3%;
+    cursor: pointer;
+    margin-left: 0%;
+    margin-top: 5px;
+
+}
+.con-right li .jineng-mon li div{
+    /*background: red;*/
+    margin-top: 15px;
+    width: 37%;
+    float: left;
+    margin-left: 4%;
+}
+
+.con-right li .jineng-mon li .jineng-delete{
+    /*background: #000;*/
+    display: none;
+    width: 10%;
+}
+.con-right li .jineng-mon li .jineng-delete span{
+    cursor: pointer;
+    margin-left: 20%;
+}
+
+/*附加技能*/
+.con-right li .fujia-mon li{
+    width: 100%;
+    border: 1px solid gainsboro;
+    height: 10px;
+    padding-left: 3%;
+    cursor: pointer;
+    margin-left: 0%;
+    margin-top: 5px;
+
+}
+.con-right li .fujia-mon li div{
+    /*background: red;*/
+    margin-top: 15px;
+    width: 37%;
+    float: left;
+    margin-left: 4%;
+}
+
+.con-right li .fujia-mon li .fujia-delete{
+    /*background: #000;*/
+    display: none;
+    width: 10%;
+}
+.con-right li .fujia-mon li .fujia-delete span{
+    cursor: pointer;
+    margin-left: 20%;
 }
