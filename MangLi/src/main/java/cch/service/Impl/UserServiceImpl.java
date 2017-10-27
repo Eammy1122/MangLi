@@ -33,7 +33,6 @@ public class UserServiceImpl implements UserService{
         }
         String token= UUID.randomUUID().toString();
         userRepository.updateTokenById(token,u.getUser_id());
-
         return u;
     }
 }

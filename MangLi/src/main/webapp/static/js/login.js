@@ -26,6 +26,7 @@ function Login(){
                 var loginData = result.data;
                 setCookie('userName',loginData.username);
                 setCookie('userId',loginData.user_id);
+                setCookie('phone',loginData.phone);
                 location.href="index.jsp";
             }
             else{

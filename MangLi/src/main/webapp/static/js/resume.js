@@ -1,5 +1,11 @@
 $(function(){
     var name = getCookie('userName');
+
+    loadResume();
+
+    $(".info-change p").hide();
+
+
     if(name==null){
         $("#state").html("登录 | 注册");
         $("#name2").html("UserName");
@@ -12,11 +18,18 @@ $(function(){
         function(){
             $(".content .con-left-foot p").eq($(this).index()).css({"color":"red"});
             $(".content .con-left-foot span").eq(2*$(this).index()).css({"color":"red"});
+            $(this).css({"border":"1px solid red"});
         },function(){
             $(".content .con-left-foot p").eq($(this).index()).css({"color":"gray"});
             $(".content .con-left-foot span").eq(2*$(this).index()).css({"color":"black"});
+            $(this).css({"border":"1px solid rgba(230,230,250,0.5)"});
         }
     );
+
+    $(".con-left-foot li").click(function(){
+        var i = $(this).index();
+        location.href="#con-li-"+i;
+    });
 
     // $(".con-right .edit").hide();
 
@@ -25,9 +38,44 @@ $(function(){
     },function(){
         $(".edit").eq($(this).index()).hide();
     });
+
+    //个人信息li.eq(0)
+
     $(".con-right .edit").eq(0).click(function(){
-        alert(0);
+        $(".right-img").hide();
+        $(".info").hide();
+        for(var i=0;i<5;i++){
+            $(".info-change input").eq(i).val($(".info span").eq(i+1).html());
+        }
+        $(".info-change input").eq(5).val($(".info span").eq(7).html());
+        $(".info-change").show();
+        $(".con-right .edit").eq(0).css({"opacity":"0"});
     });
+
+    $(".info-change button").click(function(){
+        if($(this).index()==1){
+            console.log(resume);
+            if(resume==null){
+                $(".tishi").show();
+                $(".info p").hide();
+
+            }else{
+                $(".info p").show();
+            }
+            $(".right-img").show();
+            $(".info").show();
+            $(".info-change").hide();
+            $(".con-right .edit").eq(0).css({"opacity":"1"});
+        }
+        else{
+            $(".info-change p").hide();
+            saveResumeXinXi();
+        }
+    });
+
+
+
+
     $(".con-right .edit").eq(1).click(function(){
         $(this).css({"opacity":"0"});
         $(".con-right .xinxi-mon").eq(0).hide();
@@ -42,18 +90,8 @@ $(function(){
                 $(".con-right .xinxi-mon").eq(0).show();
             }
         }else {
-            if($(".xinxi1 input").val().length>0){
-                $(".xin-shouru").html($(".xinxi1 input").val()+"万元");
-                $(".con-right .edit").eq(1).css({"opacity":"1"});
-                $(".con-right .xinxi-monChange").hide();
-                //$(".con-right .xinxi-mon").show();
-            }
-            else{
-                $(".xin-shouru").html("");
-                $(".con-right .edit").eq(1).css({"opacity":"1"});
-                $(".con-right .xinxi-monChange").hide();
-                $(".con-right .xinxi-mon").show();
-            }
+            $(".xinxi-monChange p").hide();
+            saveResumeXinSalry();
         }
     });
 
@@ -80,25 +118,28 @@ $(function(){
                 $(".qiu-mon").show();
             }
             $(".qiu-monChange").hide();
+            $(".con-right .edit").eq(2).css({"opacity":"1"});
         }
         else{
-            for(var i=0;i<5;i++){
-                $(".qiu-mon span").eq(i).html($(".qiu-monChange input").eq(i).val());
-                if($(".qiu-mon span").eq(i).html().length>0){
-                    t++;
-                }
-            }
-            if(t==0){
-                $(".xinxi-mon").eq(1).show();
-            }
-            else{
-                $(".qiu-mon").show();
-            }
-
-            $(".qiu-monChange").hide();
+            $(".qiu-monChange p").hide();
+            loadResumeQiu();
+            // for(var i=0;i<5;i++){
+            //     $(".qiu-mon span").eq(i).html($(".qiu-monChange input").eq(i).val());
+            //     if($(".qiu-mon span").eq(i).html().length>0){
+            //         t++;
+            //     }
+            // }
+            // if(t==0){
+            //     $(".xinxi-mon").eq(1).show();
+            // }
+            // else{
+            //     $(".qiu-mon").show();
+            // }
+            //
+            // $(".qiu-monChange").hide();
         }
 
-        $(".con-right .edit").eq(2).css({"opacity":"1"});
+
     });
 
     $(".con-right .edit").eq(3).click(function(){
@@ -147,43 +188,14 @@ $(function(){
 
     loadJiaoYu();
 
-    $(".schome-mon li").eq(0).css({"margin-top":"55px"});
+    LoadZaiXiao();
 
-    $(".schome-mon li").eq($(".school-mon li").length-1).css({"margin-bottom":"25px"});
+    loadJiNeng();
 
-    $(".jineng-mon li").eq(0).css({"margin-top":"55px"});
-
-    $(".jineng-mon li").eq($(".jineng-mon li").length-1).css({"margin-bottom":"25px"});
-
-    $(".fujia-mon li").eq(0).css({"margin-top":"55px"});
-
-    $(".fujia-mon li").eq($(".fujia-mon li").length-1).css({"margin-bottom":"25px"});
+    loadFuJia();
 
 
 
-    $(".schome-mon li").hover(function(){
-        $(this).css({"border":"1px solid red"});
-        $(".schoolhome-delete").eq($(this).index()).show();
-    },function(){
-        $(this).css({"border":"none"});
-        $(".schoolhome-delete").eq($(this).index()).hide();
-    });
-
-    $(".jineng-mon li").hover(function(){
-        $(this).css({"border":"1px solid red"});
-        $(".jineng-delete").eq($(this).index()).show();
-    },function(){
-        $(this).css({"border":"none"});
-        $(".jineng-delete").eq($(this).index()).hide();
-    });
-
-    $(".fujia-mon li").hover(function(){
-        $(this).css({"border":"1px solid red"});
-        $(".fujia-delete").eq($(this).index()).show();
-    },function(){
-        $(this).css({"border":"none"});
-        $(".fujia-delete").eq($(this).index()).hide();
-    });
 
 
 //    教育经历
@@ -212,6 +224,84 @@ $(function(){
         $(".con-right .edit").eq(4).css({"opacity":"1"});
         $(".school-change").hide();
     });
+
+//    在校情况
+
+//   点击添加按钮
+    $(".con-right .edit").eq(5).click(function(){
+        $(".xinxi-mon").eq(4).hide();
+        $(".con-right .edit").eq(5).css({"opacity":"0"});
+        $(".schome-mon").hide();
+        $(".schome-change").show();
+    });
+
+    $(".schome-change button").click(function(){
+        if($(this).index()==1){
+            if($(".schome-mon li").length>0){
+                $(".schome-mon").show();
+            }else{
+                $(".xinxi-mon").eq(4).show();
+            }
+            $(".schome-change").hide();
+            $(".con-right .edit").eq(5).css({"opacity":"1"});
+        }
+        else{
+            addZaiXiao();
+            $(".schome-mon").show();
+            $(".schome-change").hide();
+            $(".con-right .edit").eq(5).css({"opacity":"1"});
+            LoadZaiXiao();
+        }
+    });
+
+//    技能特长
+//    添加按钮
+    $(".con-right .edit").eq(6).click(function(){
+        $(".xinxi-mon").eq(5).hide();
+        $(".con-right .edit").eq(6).css({"opacity":"0"});
+        $(".jineng-mon").hide();
+        $(".jineng-change").show();
+    });
+
+    $(".jineng-change button").click(function(){
+        if($(this).index()==1){
+            if($(".jineng-mon li").length>0){
+                $(".jineng-mon").show();
+            }else{
+                $(".xinxi-mon").eq(5).show();
+            }
+            $(".jineng-change").hide();
+            $(".con-right .edit").eq(6).css({"opacity":"1"});
+        }
+        else{
+            alert(0);
+        }
+    });
+//    附加信息
+//    添加按钮
+    $(".con-right .edit").eq(7).click(function(){
+        $(".xinxi-mon").eq(6).hide();
+        $(".con-right .edit").eq(7).css({"opacity":"0"});
+        $(".fujia-mon").hide();
+        $(".fujia-change").show();
+    });
+
+    $(".fujia-change button").click(function(){
+        if($(this).index()==1){
+            if($(".fujia-mon li").length>0){
+                $(".fujia-mon").show();
+            }
+            else{
+                $(".xinxi-mon").eq(6).show();
+            }
+            $(".con-right .edit").eq(7).css({"opacity":"1"});
+            $(".fujia-change").hide();
+        }
+        else{
+            alert(0);
+        }
+    });
+
 })
 
 function loadJiaoYu(){
@@ -225,6 +315,19 @@ function loadJiaoYu(){
     },function(){
         $(this).css({"border":"none"});
         $(".school-delete").eq($(this).index()).hide();
+    });
+}
+
+function LoadZaiXiao(){
+    $(".schome-mon li").eq(0).css({"margin-top":"55px"});
+
+    $(".schome-mon li").eq($(".school-mon li").length-1).css({"margin-bottom":"25px"});
+    $(".schome-mon li").hover(function(){
+        $(this).css({"border":"1px solid red"});
+        $(".schoolhome-delete").eq($(this).index()).show();
+    },function(){
+        $(this).css({"border":"none"});
+        $(".schoolhome-delete").eq($(this).index()).hide();
     });
 }
 function addJiaoYuLi(){
@@ -241,4 +344,44 @@ function addJiaoYuLi(){
     var li = li.replace('[2011]',$(".school-change textarea").val());
     li = $(li);
     ul.append(li);
+}
+function addZaiXiao(){
+    var tem = '<li><div><label>时间:</label><span>[2010]</span>--<span>[2011]</span>' +
+        '</div><div><label>描述:</label><span>[获院级三等奖]</span></div>' +
+        '<div class="schoolhome-delete"><span class="glyphicon glyphicon-edit"></span>' +
+        '<span class="glyphicon glyphicon-trash"></span></div></li>';
+    var ul = $("#zaixiao-ul");
+    var li = tem.replace('[2010]',$(".schome-change input").eq(0).val());
+    var li = tem.replace('[2011]',$(".schome-change input").eq(1).val());
+    var li = tem.replace('[获院级三等奖]',$(".schome-change textarea").val());
+    li = $(li);
+    ul.append(li);
+}
+
+
+function loadJiNeng(){
+    $(".jineng-mon li").eq(0).css({"margin-top":"55px"});
+
+    $(".jineng-mon li").eq($(".jineng-mon li").length-1).css({"margin-bottom":"25px"});
+
+    $(".jineng-mon li").hover(function(){
+        $(this).css({"border":"1px solid red"});
+        $(".jineng-delete").eq($(this).index()).show();
+    },function(){
+        $(this).css({"border":"none"});
+        $(".jineng-delete").eq($(this).index()).hide();
+    });
+}
+function loadFuJia(){
+    $(".fujia-mon li").eq(0).css({"margin-top":"55px"});
+
+    $(".fujia-mon li").eq($(".fujia-mon li").length-1).css({"margin-bottom":"25px"});
+
+    $(".fujia-mon li").hover(function(){
+        $(this).css({"border":"1px solid red"});
+        $(".fujia-delete").eq($(this).index()).show();
+    },function(){
+        $(this).css({"border":"none"});
+        $(".fujia-delete").eq($(this).index()).hide();
+    });
 }

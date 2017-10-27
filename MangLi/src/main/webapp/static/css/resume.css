@@ -39,6 +39,10 @@
     width: 100%;
 
 }
+.content .con-left-foot .left-ok{
+    margin-left: 25%;
+    color:gold;
+}
 .content .con-left-foot ul{
     list-style: none;
     margin: 0;
@@ -47,7 +51,7 @@
 .content .con-left-foot li{
     display: block;
     height: 14.3%;
-    border: 1px solid gainsboro;
+    border: 1px solid rgba(230,230,250,0.5);
     cursor: pointer;
 }
 .content .con-left-foot li p{
@@ -78,12 +82,15 @@
     margin: 0;
 
 }
+.content .con-right .right-first-li:hover{
+    border: 1px solid red;
+}
 .content .con-right li{
     display: block;
     width: 80%;
     /*height: 20%;*/
     min-height: 60px;
-    border: 1px solid lightgrey;
+    border: 1px solid rgba(230,230,250,0.5);
 }
 .con-right li .name{
     height: 30px;
@@ -127,6 +134,59 @@
     opacity: 0.5;
     margin-bottom: 35px;
 }
+.con-right li .tishi{
+    display: block;
+    height: 40px;
+    margin-top: 35px;
+    font-size: 30px;
+    opacity: 0.5;
+    margin-bottom: 35px;
+    /*background: red;*/
+}
+.con-right li .tishi span{
+    display: block;
+    float: left;
+    margin-left: 15.2%;
+}
+
+.con-right li .info-change{
+    margin-top: 5px;
+    border: 1px solid red;
+    /*height: 250px;*/
+}
+.con-right li .info-change li{
+    margin-left: 15%;
+    border: none;
+}
+.con-right li .info-change p{
+    display: block;
+    width: 48%;
+    height: 40px;
+    margin-top: -20px;
+    margin-left: 26.5%;
+    text-align: center;
+    font-size: 20px;
+    padding-top: 5px;
+}
+.con-right li .info-change li span{
+    display: block;
+    float: left;
+    /*background: #000;*/
+    height: 30px;
+    margin-top: 5px;
+}
+.con-right li .info-change li .input-group{
+    margin-left: 15px;
+    width:60%;
+    float: left;
+}
+
+
+
+
+
+
+
 .con-right li .xinxi-mon span{
     display: block;
     float: left;
@@ -172,6 +232,17 @@
     padding-left: 8%;
     padding-top: 15px;
 }
+.con-right li .qiu-monChange p{
+    display: none;
+    width: 48%;
+    height: 40px;
+    margin-top: 0px;
+    margin-left: 26.8%;
+    text-align: center;
+    font-size: 20px;
+    border-radius: 5px;
+    padding-top: 5px;
+}
 .con-right li .qiu-monChange li{
     min-height: 40px;
     border: none;
@@ -194,9 +265,15 @@
     /*background: red;*/
     margin-top: 45px;
     font-size: 15px;
-    padding-left: 8%;
+    padding-left: 0%;
 }
-.con-right li .work-jy div{
+.con-right li .work-jy li{
+    width: 100%;
+    height: 100px;
+    margin-left: 0%;
+    padding-left: 10%;
+}
+.con-right li .work-jy li div{
     width: 40%;
     float: left;
     margin-top: 5px;
@@ -244,6 +321,16 @@
     margin-left: 15%;
     border: none;
 }
+.con-right li .school-change p{
+    display: block;
+    width: 50%;
+    height: 40px;
+    margin-top: -20px;
+    margin-left: 26.5%;
+    text-align: center;
+    font-size: 20px;
+    padding-top: 5px;
+}
 .con-right li .school-change li span{
     display: block;
     float: left;
@@ -275,6 +362,9 @@
 .con-right li .school-mon li .school-delete span:first-child{
     margin-left: 0%;
 }
+
+/*schome-mon 在校情况*/
+
 .con-right li .schome-mon li{
     width: 100%;
     border: 1px solid gainsboro;
@@ -285,6 +375,38 @@
     margin-top: 5px;
 
 }
+.con-right li .schome-change{
+    margin-top: 55px;
+    border: 1px solid red;
+}
+.con-right li .schome-change li{
+    margin-left: 15%;
+    border: none;
+}
+.con-right li .schome-change p{
+    display: block;
+    width: 50%;
+    height: 40px;
+    margin-top: -20px;
+    margin-left: 26.5%;
+    text-align: center;
+    font-size: 20px;
+    padding-top: 5px;
+}
+.con-right li .schome-change li span{
+    display: block;
+    float: left;
+    /*background: #000;*/
+    height: 30px;
+    margin-top: 5px;
+}
+.con-right li .schome-change li .input-group{
+    margin-left: 15px;
+    width:60%;
+    float: left;
+}
+
+
 .con-right li .schome-mon li div{
     /*background: red;*/
     margin-top: 15px;
@@ -332,6 +454,38 @@
     margin-left: 20%;
 }
 
+
+.con-right li .jineng-change{
+    margin-top: 55px;
+    border: 1px solid red;
+}
+.con-right li .jineng-change li{
+    margin-left: 15%;
+    border: none;
+}
+.con-right li .jineng-change p{
+    display: block;
+    width: 50%;
+    height: 40px;
+    margin-top: -20px;
+    margin-left: 26.5%;
+    text-align: center;
+    font-size: 20px;
+    padding-top: 5px;
+}
+.con-right li .jineng-change li span{
+    display: block;
+    float: left;
+    /*background: #000;*/
+    height: 30px;
+    margin-top: 5px;
+}
+.con-right li .jineng-change li .input-group{
+    margin-left: 15px;
+    width:60%;
+    float: left;
+}
+
 /*附加技能*/
 .con-right li .fujia-mon li{
     width: 100%;
@@ -360,3 +514,35 @@
     cursor: pointer;
     margin-left: 20%;
 }
+.con-right li .fujia-change{
+    margin-top: 55px;
+    border: 1px solid red;
+}
+.con-right li .fujia-change li{
+    margin-left: 15%;
+    border: none;
+}
+.con-right li .fujia-change p{
+    display: block;
+    width: 48%;
+    height: 40px;
+    margin-top: -20px;
+    margin-left: 26.5%;
+    text-align: center;
+    font-size: 20px;
+    padding-top: 5px;
+}
+.con-right li .fujia-change li span{
+    display: block;
+    float: left;
+    /*background: #000;*/
+    height: 30px;
+    margin-top: 5px;
+}
+.con-right li .fujia-change li .input-group{
+    margin-left: 15px;
+    width:60%;
+    float: left;
+}
+
+
